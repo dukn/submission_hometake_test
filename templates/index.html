@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Forecast</title>
+</head>
+<body>
+    <h1>Enter Item ID to Get Sales Forecast</h1>
+    <form action="/predict" method="POST">
+        <label for="item_id">Item ID:</label>
+        <input type="number" id="item_id" name="item_id" required>
+        <button type="submit">Predict</button>
+    </form>
+    {% if total_prediction %}
+        <h2>Predicted Total Sales for Item_ID {{item_id}}: {{ total_prediction }}</h2>
+
+        Detail prediction: 
+        <br>
+        {{ detail_prediction }}
+    {% endif %}
+</body>
+</html>
