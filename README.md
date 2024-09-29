@@ -26,7 +26,11 @@ The detailed implementation can be found in the `task1_solution.ipynb` notebook.
 ### Solution
 
 To deploy this model for internal users. 
+
 I believe that pre-calculating and showing pre-calculated results is suitable for the problem. 
+- The input only changes every month, so the model only needs to run once a month.
+- Pre-computing the results also makes querying and returning results faster, skipping the feature calculation and model inference time.
+
 The API will be built on Flask library to simplify development and deployment. 
 The pre-calculated results in the submission.csv file will be loaded into the API and return as a webform.
 
